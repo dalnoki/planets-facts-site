@@ -1,0 +1,102 @@
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/functions" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+input[type="checkbox"]:not(:checked) + ul {
+  display: none;
+
+  @include respond(l) {
+    display: inline-flex;
+  }
+}
+
+nav input[type="checkbox"],
+nav label {
+  display: none;
+}
+
+nav label {
+  text-align: right;
+  display: block;
+  padding: 0.5em;
+  line-height: 1.6em;
+  align-self: center;
+
+  @include respond(l) {
+    display: none;
+  }
+}
+
+.nav {
+  align-items: center;
+  background-color: $header-background;
+  color: $header-color;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 0;
+  margin-right: 0;
+
+  @include respond(l) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & ul {
+    display: block;
+
+    @include respond(l) {
+      list-style-type: none;
+    }
+  }
+
+  & ul:last-child {
+    width: 100%;
+    flex-basis: 100%;
+
+    @include respond(l) {
+      display: inline-flex;
+      flex-basis: unset;
+      width: unset;
+    }
+  }
+
+  & ul li {
+    margin-bottom: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0.5em;
+
+    @include respond(l) {
+      display: inline-flex;
+      margin: 0.3em 1em;
+    }
+  }
+
+  &--divider {
+    border: none;
+    stroke: $header-divider;
+  }
+
+  &--planet {
+    color: $header-color;
+    text-decoration: none;
+  }
+}
+
+.sub-menu {
+  background-color: $header-background;
+  color: $header-color;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
