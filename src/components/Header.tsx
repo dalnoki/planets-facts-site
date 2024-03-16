@@ -3,9 +3,8 @@ import Nav from "../components/Nav.tsx";
 
 export default function Header() {
   return (
-    <header>
+    <header className="header">
       <Nav />
-      <hr className="nav--divider" />
     </header>
   );
 }

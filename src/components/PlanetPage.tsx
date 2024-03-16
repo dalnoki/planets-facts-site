@@ -32,15 +32,14 @@ export default function PlanetPage({ planet }: PlanetType) {
   const [currentPage, setCurrentPage] = useState("overview");
 
   return (
-    <>
+    <div className="planet-page">
       <SubMenu setCurrentPage={setCurrentPage} />
-      <div className="planet-page"></div>
-      <h1>{planet.name}</h1>
       {currentPage === "overview" ? (
         <SubPage
           alt={planet.name}
           image={planet.images.planet}
           description={planet.overview.content}
+          source={planet.overview.source}
         />
       ) : null}
       {currentPage === "structure" ? (
@@ -48,6 +47,7 @@ export default function PlanetPage({ planet }: PlanetType) {
           alt={planet.name}
           image={planet.images.internal}
           description={planet.structure.content}
+          source={planet.structure.source}
         />
       ) : null}
       {currentPage === "surface" ? (
@@ -55,13 +55,27 @@ export default function PlanetPage({ planet }: PlanetType) {
           alt={planet.name}
           image={planet.images.planet}
           description={planet.geology.content}
+          source={planet.geology.source}
         />
       ) : null}
-      <p>{planet.rotation}</p>
-      <p>{planet.revolution}</p>
-      <p>{planet.radius}</p>
-      <p>{planet.temperature}</p>
-      <p>{planet.rotation}</p>
-    </>
+      <div className="planet--facts">
+        <div className="planet--facts-row">
+          <p className="planet--facts-title">Rotation time</p>
+          <p className="planet--facts-data">{planet.rotation}</p>
+        </div>
+        <div className="planet--facts-row">
+          <p className="planet--facts-title">Revolution time</p>
+          <p className="planet--facts-data">{planet.revolution}</p>
+        </div>
+        <div className="planet--facts-row">
+          <p className="planet--facts-title">Radius</p>
+          <p className="planet--facts-data">{planet.radius}</p>
+        </div>
+        <div className="planet--facts-row">
+          <p className="planet--facts-title">Average temp.</p>
+          <p className="planet--facts-data">{planet.temperature}</p>
+        </div>
+      </div>
+    </div>
   );
 }

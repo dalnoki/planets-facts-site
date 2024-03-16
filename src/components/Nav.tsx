@@ -1,5 +1,9 @@
 import "../main.scss";
 import hamburger from "../assets/icon-hamburger.svg";
+import { Link } from "react-router-dom";
+import planetData from "../../data.json";
+
+const allPlanets = planetData;
 
 export default function Nav() {
   return (
@@ -18,47 +22,15 @@ export default function Nav() {
         ></img>
       </label>
       <input id="menu" type="checkbox" />
-      <ul>
-        <li>
-          <a className="nav--planet" href="#">
-            Mercury
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Venus
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Earth
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Mars
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Jupiter
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Saturn
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Uranus
-          </a>
-        </li>
-        <li>
-          <a className="nav--planet" href="#">
-            Neptun
-          </a>
-        </li>
+      <ul className="nav-planets">
+        {allPlanets.map((planet) => (
+          <div className="nav-planets-container">
+            <span
+              className={`planet-theme planet-${planet.name.toLowerCase()}-color`}
+            ></span>
+            <Link to={`${planet.name.toLowerCase()}`}>{planet.name}</Link>
+          </div>
+        ))}
       </ul>
     </nav>
   );

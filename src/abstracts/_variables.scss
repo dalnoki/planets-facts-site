@@ -1,3 +1,26 @@
+@use "./functions" as *;
+
+$body-font-color: #fff;
+$body-font-size: px-to-rem(11);
+$body-line-spacing: px-to-rem(25);
+$font-primary: "League Spartan", sans-serif;
+$font-secondary: "Antonio", sans-serif;
+$h1-font-size: px-to-rem(40);
+$h1-font-color: #fff;
+
 $header-background: #070724;
 $header-color: #fff;
 $header-divider: #979797;
+
+$body-background: #070724;
+
+$earth-color: #545bfe;
+$jupiter-color: #ecad7a;
+$mars-color: #ff6a45;
+$mercury-color: #def4fc;
+$neptune-color: #497efa;
+$saturn-color: #fccb6b;
+$uranus-color: #65f0d5;
+$venus-color: #f7cc7f;
+
+$white-opacity: rgba(255, 255, 255, 0.5);
