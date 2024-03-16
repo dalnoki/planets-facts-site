@@ -19,28 +19,6 @@ body {
   line-height: $body-line-spacing;
 }
 
-input[type="checkbox"]:not(:checked) + ul {
-  display: none;
-
-  @include respond(l) {
-    display: inline-flex;
-  }
-}
-
-nav input[type="checkbox"],
-nav label {
-  display: none;
-}
-
-nav label {
-  align-items: center;
-  display: flex;
-
-  @include respond(l) {
-    display: none;
-  }
-}
-
 .nav {
   align-items: center;
   background-color: $header-background;
@@ -62,7 +40,6 @@ nav label {
   }
 
   & ul {
-    display: block;
     list-style: none;
 
     @include respond(l) {
@@ -71,17 +48,6 @@ nav label {
   }
 
   & ul:last-child {
-    background: $body-background;
-    width: 100%;
-    flex-basis: 100%;
-    padding: 0;
-    top: px-to-rem(22);
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: px-to-rem(79);
-    left: 0;
-
     @include respond(l) {
       display: inline-flex;
       flex-basis: unset;
@@ -89,26 +55,20 @@ nav label {
     }
   }
 
-  & ul li {
-    width: 100%;
-
-    @include respond(l) {
-      display: inline-flex;
-      margin: 0.3em 1em;
-    }
+  &-checkbox {
+    display: none;
   }
 
   &-planets {
-    color: #333;
-    position: relative;
-    top: -55px;
-    height: 135px;
-    padding: 20px;
-    padding-left: 130px;
-    font-size: 22px;
-    box-sizing: border-box;
-    background-color: #ddd;
-    transition: top 600ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    background: $body-background;
+    height: 100vh;
+    left: -400px;
+    padding: 0;
+    position: absolute;
+    top: px-to-rem(79);
+    visibility: hidden;
+    width: 100%;
+    transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
     &-container {
       align-items: center;
@@ -145,6 +105,11 @@ nav label {
       border-top: 2px solid #000;
     }
   }
+}
+
+.menu-toggled {
+  left: 0;
+  visibility: visible;
 }
 
 .planet {
