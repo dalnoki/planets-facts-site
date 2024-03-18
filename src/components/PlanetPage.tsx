@@ -33,7 +33,11 @@ export default function PlanetPage({ planet }: PlanetType) {
 
   return (
     <div className="planet-page">
-      <SubMenu setCurrentPage={setCurrentPage} />
+      <SubMenu
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        name={planet.name}
+      />
       {currentPage === "overview" ? (
         <SubPage
           alt={planet.name}
@@ -73,7 +77,7 @@ export default function PlanetPage({ planet }: PlanetType) {
         </div>
         <div className="planet--facts-row">
           <p className="planet--facts-title">Average temp.</p>
-          <p className="planet--facts-data">{planet.temperature}</p>
+          <p>{planet.temperature}</p>
         </div>
       </div>
     </div>

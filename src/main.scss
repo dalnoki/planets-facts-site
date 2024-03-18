@@ -72,8 +72,15 @@ body {
 
     &-container {
       align-items: center;
+      height: px-to-rem(65);
       display: flex;
       padding-left: px-to-rem(24);
+
+      & a {
+        color: $header-color;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
     }
   }
 
@@ -149,7 +156,7 @@ body {
     background: $jupiter-color;
   }
 
-  &-mars-color  {
+  &-mars-color {
     background: $mars-color;
   }
 
@@ -189,13 +196,16 @@ body {
 
   &--source {
     color: $white-opacity;
+    font-family: $font-primary;
+    font-size: px-to-rem(16);
     text-align: center;
     padding-top: px-to-rem(32);
     padding-bottom: px-to-rem(28);
 
     & p a {
       color: $white-opacity;
-      text-decoration: none;
+      font-weight: bold;
+      text-decoration: underline;
     }
   }
 
@@ -237,8 +247,55 @@ body {
   color: #fff;
   display: flex;
   font-size: px-to-rem(12);
+  font-weight: bold;
   justify-content: space-between;
   list-style: none;
   padding: px-to-rem(20) px-to-rem(24);
   text-transform: uppercase;
+
+  &-current {
+    position: relative;
+
+    &--earth {
+      background: $earth-secondary;
+    }
+
+    &--mars {
+      background: $mars-secondary;
+    }
+
+    &--jupiter {
+      background-color: $jupiter-secondary;
+    }
+
+    &--mercury {
+      background: $mercury-secondary;
+    }
+
+    &--neptune {
+      background: $neptune-secondary;
+    }
+
+    &--saturn {
+      background: $saturn-secondary;
+    }
+
+    &--uranus {
+      background: $uranus-secondary;
+    }
+
+    &--venus {
+      background: $venus-secondary;
+    }
+
+    & span {
+      content: "";
+      display: inline-block;
+      height: 4px;
+      position: absolute;
+      top: 44px;
+      width: 80px;
+      left: -9px;
+    }
+  }
 }
