@@ -34,16 +34,18 @@ export default function Nav() {
         ></img>
       </label>
       <input className="nav-checkbox" id="menu" type="checkbox" />
-      <ul className={hamburgerMenuStyle}>
-        {allPlanets.map((planet) => (
-          <div className="nav-planets-container">
-            <span
-              className={`planet-theme planet-${planet.name.toLowerCase()}-color`}
-            ></span>
-            <Link to={`${planet.name.toLowerCase()}`}>{planet.name}</Link>
-          </div>
-        ))}
-      </ul>
+      <div>
+        <ul className={hamburgerMenuStyle}>
+          {allPlanets.map((planet) => (
+            <div className="nav-planets-container">
+              <span
+                className={`planet-theme planet-${planet.name.toLowerCase()}-color`}
+              ></span>
+              <Link to={`${planet.name.toLowerCase()}`}>{planet.name}</Link>
+            </div>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }

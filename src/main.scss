@@ -41,6 +41,7 @@ body {
 
   & ul {
     list-style: none;
+    z-index: 1;
 
     @include respond(l) {
       list-style-type: none;
