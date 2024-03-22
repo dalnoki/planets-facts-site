@@ -77,7 +77,7 @@ export default function PlanetPage({ planet }: PlanetType) {
         </div>
         <div className="planet--facts-row">
           <p className="planet--facts-title">Average temp.</p>
-          <p>{planet.temperature}</p>
+          <p className="planet--facts-data">{planet.temperature}</p>
         </div>
       </div>
     </div>

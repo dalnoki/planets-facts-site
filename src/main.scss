@@ -56,6 +56,11 @@ body {
     }
   }
 
+  & div {
+    flex-basis: 100%;
+    padding-right: px-to-rem(5);
+  }
+
   &-checkbox {
     display: none;
   }
@@ -64,24 +69,38 @@ body {
     background: $body-background;
     height: 100vh;
     left: -400px;
-    padding: 0;
     position: absolute;
     top: px-to-rem(79);
     visibility: hidden;
+    padding-top: px-to-rem(35);
     width: 100%;
     transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
+    &--chevron {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+    }
+
     &-container {
       align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, .2);
       height: px-to-rem(65);
       display: flex;
       padding-left: px-to-rem(24);
+      justify-content: space-between;
+      margin: 0 25px;
 
       & a {
         color: $header-color;
         text-decoration: none;
         text-transform: uppercase;
       }
+    }
+
+    &--planet {
+      align-items: center;
+      display: flex;
     }
   }
 
