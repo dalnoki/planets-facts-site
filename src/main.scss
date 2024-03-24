@@ -34,6 +34,10 @@ body {
   margin-right: 0;
   padding: px-to-rem(26) px-to-rem(24);
 
+  @include respond(m) {
+    justify-content: center;
+  }
+
   @include respond(l) {
     display: flex;
     justify-content: space-between;
@@ -65,6 +69,13 @@ body {
     display: none;
   }
 
+  &--hamburger {
+    @include respond(m) {
+      display: none;
+    }
+
+  }
+
   &-planets {
     background: $body-background;
     height: 100vh;
@@ -80,6 +91,26 @@ body {
       align-items: center;
       display: flex;
       justify-content: flex-end;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include respond(m) {
+        display: flex;
+        font-family: $font-primary;
+        font-size: px-to-rem(16);
+        font-weight: bold;
+        justify-content: center;
+        padding-top: px-to-rem(16);
+      }
+
+      & a {
+        color: rgba(255, 255, 255, .8);
+        padding-right: px-to-rem(33);
+        text-transform: uppercase;
+        text-decoration: none;
+      }
     }
 
     &-container {
@@ -141,6 +172,12 @@ body {
 
 .planet {
   &--facts {
+    @include respond(m) {
+      display: flex;
+      flex-basis: 100%;
+      padding: 0 px-to-rem(39);
+      order: 5;
+    }
     &-data {
       color: $body-font-color;
       font-family: $font-secondary;
@@ -165,6 +202,13 @@ body {
       margin: 0 px-to-rem(24);
       margin-bottom: px-to-rem(8);
       padding: 0 px-to-rem(24);
+
+      @include respond(m) {
+        height: px-to-rem(88);
+        margin: 0;
+        margin-right: px-to-rem(11);
+  
+      }
     }
   }
 
@@ -204,6 +248,11 @@ body {
     background: $body-background url("./assets/background-stars.svg") repeat
       center;
     padding-bottom: px-to-rem(50);
+
+    @include respond(m) {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 
   &-theme {
@@ -222,6 +271,13 @@ body {
     padding-top: px-to-rem(32);
     padding-bottom: px-to-rem(28);
 
+    @include respond(m) {
+      display: flex;
+      flex-basis: 100%;
+      order: 4;
+      padding-left: px-to-rem(39);
+    }
+
     & p a {
       color: $white-opacity;
       font-weight: bold;
@@ -236,6 +292,14 @@ body {
     max-width: px-to-rem(313);
     padding: 0 px-to-rem(24);
     text-align: center;
+
+    @include respond(m) {
+      flex-basis: 50%;
+      order: 3;
+      padding: 0;
+      margin: 0;
+      padding-left: px-to-rem(39);
+    }
   }
 
   &--img {
@@ -245,6 +309,11 @@ body {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
+
+    @include respond(m) {
+      flex-basis: 100%;
+      order: 1;
+    }
 
     & img {
       height: px-to-rem(111);
@@ -258,6 +327,14 @@ body {
     font-family: $font-secondary;
     text-align: center;
     text-transform: uppercase;
+
+   @include respond(m) {
+    display: flex;
+    flex-basis: 100%;    
+    margin-bottom: px-to-rem(16);
+    margin-left: px-to-rem(39);
+    order: 2;
+   } 
   }
 }
 
@@ -273,8 +350,17 @@ body {
   padding: px-to-rem(20) px-to-rem(24);
   text-transform: uppercase;
 
+  @include respond(m) {
+    border: none;
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    order: 4;
+  }
+
   &-current {
     position: relative;
+
 
     &--earth {
       background: $earth-secondary;
@@ -316,6 +402,26 @@ body {
       top: 44px;
       width: 80px;
       left: -9px;
+
+
+    @include respond(m) {
+     display: none;
     }
+    }
+  }
+
+  &--index {
+    display: none;
+
+    @include respond(m) {
+      display: block;
+    }
+  }
+  
+
+  & li {
+   @include respond(m) {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+   } 
   }
 }

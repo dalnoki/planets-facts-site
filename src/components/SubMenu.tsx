@@ -12,6 +12,7 @@ export default function SubMenu({
   return (
     <ul className="sub-menu">
       <li className={currentPage === "overview" ? `sub-menu-current` : ""}>
+        <p className="sub-menu--index">01</p>
         <a onClick={() => setCurrentPage("overview")}>Overview</a>
         <span
           className={

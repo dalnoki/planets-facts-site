@@ -19,6 +19,11 @@ export default function Nav() {
     ["menu-toggled"]: isMenuToggled,
   });
 
+  const menuStyle = clsx({
+    ["nav-planets--desktop"]: true,
+  });
+
+
   return (
     <nav className="nav">
       <ul>
@@ -51,6 +56,13 @@ export default function Nav() {
               </div>
             </div>
        
+          ))}
+        </ul>
+      </div>
+      <div>
+        <ul className={menuStyle}>
+        {allPlanets.map((planet) => (
+              <Link to={`${planet.name.toLowerCase()}`}>{planet.name}</Link>       
           ))}
         </ul>
       </div>

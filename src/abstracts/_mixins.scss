@@ -5,7 +5,7 @@
     }
   }
   @if $breakpoint==m {
-    @media only screen and (min-width: 576px) {
+    @media only screen and (min-width: 700px) {
       @content;
     }
   }
