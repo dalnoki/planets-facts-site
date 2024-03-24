@@ -40,7 +40,8 @@ export default function PlanetPage({ planet }: PlanetType) {
       />
       {currentPage === "overview" ? (
         <SubPage
-          alt={planet.name}
+          currentPage={currentPage}
+          name={planet.name}
           image={planet.images.planet}
           description={planet.overview.content}
           source={planet.overview.source}
@@ -48,7 +49,8 @@ export default function PlanetPage({ planet }: PlanetType) {
       ) : null}
       {currentPage === "structure" ? (
         <SubPage
-          alt={planet.name}
+        currentPage={currentPage}
+          name={planet.name}
           image={planet.images.internal}
           description={planet.structure.content}
           source={planet.structure.source}
@@ -56,7 +58,8 @@ export default function PlanetPage({ planet }: PlanetType) {
       ) : null}
       {currentPage === "surface" ? (
         <SubPage
-          alt={planet.name}
+        currentPage={currentPage}
+          name={planet.name}
           image={planet.images.planet}
           description={planet.geology.content}
           source={planet.geology.source}

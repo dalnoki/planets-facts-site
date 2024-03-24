@@ -2,23 +2,31 @@ import iconSource from "../assets/icon-source.svg";
 
 interface SubPageProps {
   image: string;
-  alt: string;
+  name: string;
   description: string;
   source: string;
+  currentPage: string;
 }
 
 export default function Overview({
-  alt,
+  name,
   image,
   description,
   source,
+  currentPage
 }: SubPageProps) {
   return (
     <>
       <div className="planet--img">
-        <img src={image} alt={alt}></img>
+        <img src={image} alt={name}></img>
       </div>
-      <h1 className="planet--name">{alt}</h1>
+      { currentPage === "surface" ? 
+      <div className="surface-img">
+        
+      <img src={`./src/assets/geology-${name.toLowerCase()}.png`} alt={name} />
+      </div> : null
+}
+      <h1 className="planet--name">{name}</h1>
       <div className="planet--description">
         <p>{description}</p>
       </div>

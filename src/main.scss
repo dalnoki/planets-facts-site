@@ -52,6 +52,12 @@ body {
     }
   }
 
+  & ul li {
+    @include respond(m) {
+      padding: px-to-rem(32) 0;
+    }
+  }
+
   & ul:last-child {
     @include respond(l) {
       display: inline-flex;
@@ -106,7 +112,7 @@ body {
       }
 
       & a {
-        color: rgba(255, 255, 255, .8);
+        color: rgba(255, 255, 255, .7);
         padding-right: px-to-rem(33);
         text-transform: uppercase;
         text-decoration: none;
@@ -175,7 +181,8 @@ body {
     @include respond(m) {
       display: flex;
       flex-basis: 100%;
-      padding: 0 px-to-rem(39);
+      justify-content: center;
+      padding: 0;
       order: 5;
     }
     &-data {
@@ -204,10 +211,14 @@ body {
       padding: 0 px-to-rem(24);
 
       @include respond(m) {
+        display: flex;
+        flex-direction: column;
         height: px-to-rem(88);
+        justify-content: center;
         margin: 0;
         margin-right: px-to-rem(11);
-  
+        min-width: px-to-rem(164);
+        padding: 0;
       }
     }
   }
@@ -250,8 +261,10 @@ body {
     padding-bottom: px-to-rem(50);
 
     @include respond(m) {
+      align-items: center;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
@@ -298,7 +311,9 @@ body {
       order: 3;
       padding: 0;
       margin: 0;
-      padding-left: px-to-rem(39);
+      min-width: px-to-rem(339);
+      text-align: left;
+      padding-right: px-to-rem(20);
     }
   }
 
@@ -318,6 +333,11 @@ body {
     & img {
       height: px-to-rem(111);
       width: px-to-rem(111);
+      
+      @include respond(m) {
+        height: px-to-rem(184);
+        width: px-to-rem(184);
+      }
     }
   }
 
@@ -353,14 +373,13 @@ body {
   @include respond(m) {
     border: none;
     display: flex;
-    flex-basis: 50%;
+    flex-basis: 37%;
     flex-direction: column;
     order: 4;
   }
 
   &-current {
     position: relative;
-
 
     &--earth {
       background: $earth-secondary;
@@ -410,11 +429,25 @@ body {
     }
   }
 
+  &--row {
+    display: flex;
+
+    @include respond(m) {
+      margin-bottom: px-to-rem(16);
+      max-width: px-to-rem(281);
+      padding-top: px-to-rem(8);
+      padding-bottom: px-to-rem(8);
+    }
+  }
+
   &--index {
     display: none;
 
     @include respond(m) {
+      color: rgba(255, 255, 255, .5);
       display: block;
+      padding-left: px-to-rem(20);
+      padding-right: px-to-rem(17);
     }
   }
   
@@ -423,5 +456,28 @@ body {
    @include respond(m) {
     border: 1px solid rgba(255, 255, 255, 0.2);
    } 
+  }
+}
+
+.surface-img {
+  position: absolute;
+  bottom: 220px;
+  left: 238px;
+
+  @include respond(m) {
+    bottom: px-to-rem(150);
+    left: px-to-rem(406);
+  }
+
+  & img {
+  height: px-to-rem(60);  
+  width: px-to-rem(50);  
+
+  @include respond(m) {  
+  bottom: px-to-rem(125);
+  height: px-to-rem(100);
+  width: px-to-rem(81);
+
+  }
   }
 }
