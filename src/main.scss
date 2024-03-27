@@ -321,26 +321,99 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 224px;
-    height: 224px;
+    min-width: px-to-rem(300);
+    min-height: px-to-rem(300);
     margin: 0 auto;
     justify-content: center;
 
     @include respond(m) {
       flex-basis: 100%;
+      min-width: px-to-rem(500);
+      min-height: px-to-rem(500);
       order: 1;
     }
 
-    & img {
-      height: px-to-rem(111);
-      width: px-to-rem(111);
-      
-      @include respond(m) {
-        height: px-to-rem(184);
+      &-mercury {
+        height: px-to-rem(111);
+        width: px-to-rem(111);
+
+        @include respond(m) {
+          height: px-to-rem(184);
         width: px-to-rem(184);
+        }
+      }
+
+      &-venus {
+        height: px-to-rem(154);
+        width: px-to-rem(154);
+
+        @include respond(m) {
+          height: px-to-rem(253);
+          width: px-to-rem(253);
+        }
+      }
+
+      &-earth {
+        height: px-to-rem(173);
+        width: px-to-rem(173);
+
+        @include respond(m) {
+          height: px-to-rem(285);
+          width: px-to-rem(285);
+        }
+      }
+
+      &-mars {
+        height: px-to-rem(129);
+        width: px-to-rem(129);
+
+        @include respond(m) {
+          height: px-to-rem(213);
+          width: px-to-rem(213);
+        }
+      }
+
+      &-jupiter {
+        height: px-to-rem(224);
+        width: px-to-rem(224);
+
+        @include respond(m) {
+          height: px-to-rem(369);
+          width: px-to-rem(369);
+        }
+      }
+
+      &-saturn {
+        height: px-to-rem(256);
+        width: px-to-rem(256);
+
+        @include respond(m) {
+          height: px-to-rem(422);
+          width: px-to-rem(422);
+        }
+      }
+
+      &-uranus {
+        height: px-to-rem(176);
+        width: px-to-rem(176);
+
+        @include respond(m) {
+          height: px-to-rem(290);
+          width: px-to-rem(290);
+        }
+      }
+
+      &-neptune {
+        height: px-to-rem(285);
+        width: px-to-rem(285);
+
+        @include respond(m) {
+          height: px-to-rem(450);
+          width: px-to-rem(450);
+        }
       }
     }
-  }
+  
 
   &--name {
     color: $h1-font-color;

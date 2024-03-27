@@ -17,8 +17,8 @@ export default function Overview({
 }: SubPageProps) {
   return (
     <>
-      <div className="planet--img">
-        <img src={image} alt={name}></img>
+      <div className={"planet--img"}>
+        <img src={image} alt={name} className={`planet--img-${name.toLowerCase()}`} />
       { currentPage === "surface" ? 
       <div className="surface-img">
         
