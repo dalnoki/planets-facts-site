@@ -15,38 +15,38 @@ export default function SubMenu({
   const subMenuStyleOverView = clsx({
     ["sub-menu--row"]: true,
     ["sub-menu-current"]: currentPage === "overview",
-    ["sub-menu-current--mercury"]: name.toLowerCase() === "mercury" && currentPage === "overview",
-    ["sub-menu-current--venus"]: name.toLowerCase() === "venus" && currentPage === "overview",
-    ["sub-menu-current--earth"]: name.toLowerCase() === "earth" && currentPage === "overview",
-    ["sub-menu-current--mars"]: name.toLowerCase() === "mars" && currentPage === "overview",
-    ["sub-menu-current--jupiter"]: name.toLowerCase() === "jupiter" && currentPage === "overview",
-    ["sub-menu-current--saturn"]: name.toLowerCase() === "saturn" && currentPage === "overview",
-    ["sub-menu-current--uranus"]: name.toLowerCase() === "uranus" && currentPage === "overview",
-    ["sub-menu-current--neptune"]: name.toLowerCase() === "neptune" && currentPage === "overview"
+    ["sub-menu-current-desktop--mercury"]: name.toLowerCase() === "mercury" && currentPage === "overview",
+    ["sub-menu-current-desktop--venus"]: name.toLowerCase() === "venus" && currentPage === "overview",
+    ["sub-menu-current-desktop--earth"]: name.toLowerCase() === "earth" && currentPage === "overview",
+    ["sub-menu-current-desktop--mars"]: name.toLowerCase() === "mars" && currentPage === "overview",
+    ["sub-menu-current-desktop--jupiter"]: name.toLowerCase() === "jupiter" && currentPage === "overview",
+    ["sub-menu-current-desktop--saturn"]: name.toLowerCase() === "saturn" && currentPage === "overview",
+    ["sub-menu-current-desktop--uranus"]: name.toLowerCase() === "uranus" && currentPage === "overview",
+    ["sub-menu-current-desktop--neptune"]: name.toLowerCase() === "neptune" && currentPage === "overview"
   });
   const subMenuStyleStructure = clsx({
     ["sub-menu--row"]: true,
     ["sub-menu-current"]: currentPage === "structure",
-    ["sub-menu-current--mercury"]: name.toLowerCase() === "mercury" && currentPage === "structure",
-    ["sub-menu-current--venus"]: name.toLowerCase() === "venus" && currentPage === "structure",
-    ["sub-menu-current--earth"]: name.toLowerCase() === "earth" && currentPage === "structure",
-    ["sub-menu-current--mars"]: name.toLowerCase() === "mars" && currentPage === "structure",
-    ["sub-menu-current--jupiter"]: name.toLowerCase() === "jupiter" && currentPage === "structure",
-    ["sub-menu-current--saturn"]: name.toLowerCase() === "saturn" && currentPage === "structure",
-    ["sub-menu-current--uranus"]: name.toLowerCase() === "uranus" && currentPage === "structure",
-    ["sub-menu-current--neptune"]: name.toLowerCase() === "neptune" && currentPage === "structure"
+    ["sub-menu-current-desktop--mercury"]: name.toLowerCase() === "mercury" && currentPage === "structure",
+    ["sub-menu-current-desktop--venus"]: name.toLowerCase() === "venus" && currentPage === "structure",
+    ["sub-menu-current-desktop--earth"]: name.toLowerCase() === "earth" && currentPage === "structure",
+    ["sub-menu-current-desktop--mars"]: name.toLowerCase() === "mars" && currentPage === "structure",
+    ["sub-menu-current-desktop--jupiter"]: name.toLowerCase() === "jupiter" && currentPage === "structure",
+    ["sub-menu-current-desktop--saturn"]: name.toLowerCase() === "saturn" && currentPage === "structure",
+    ["sub-menu-current-desktop--uranus"]: name.toLowerCase() === "uranus" && currentPage === "structure",
+    ["sub-menu-current-desktop--neptune"]: name.toLowerCase() === "neptune" && currentPage === "structure"
   });
   const subMenuStyleSurface = clsx({
     ["sub-menu--row"]: true,
     ["sub-menu-current"]: currentPage === "surface",
-    ["sub-menu-current--mercury"]: name.toLowerCase() === "mercury" && currentPage === "surface",
-    ["sub-menu-current--venus"]: name.toLowerCase() === "venus" && currentPage === "surface",
-    ["sub-menu-current--earth"]: name.toLowerCase() === "earth" && currentPage === "surface",
-    ["sub-menu-current--mars"]: name.toLowerCase() === "mars" && currentPage === "surface",
-    ["sub-menu-current--jupiter"]: name.toLowerCase() === "jupiter" && currentPage === "surface",
-    ["sub-menu-current--saturn"]: name.toLowerCase() === "saturn" && currentPage === "surface",
-    ["sub-menu-current--uranus"]: name.toLowerCase() === "uranus" && currentPage === "surface",
-    ["sub-menu-current--neptune"]: name.toLowerCase() === "neptune" && currentPage === "surface"
+    ["sub-menu-current-desktop--mercury"]: name.toLowerCase() === "mercury" && currentPage === "surface",
+    ["sub-menu-current-desktop--venus"]: name.toLowerCase() === "venus" && currentPage === "surface",
+    ["sub-menu-current-desktop--earth"]: name.toLowerCase() === "earth" && currentPage === "surface",
+    ["sub-menu-current-desktop--mars"]: name.toLowerCase() === "mars" && currentPage === "surface",
+    ["sub-menu-current-desktop--jupiter"]: name.toLowerCase() === "jupiter" && currentPage === "surface",
+    ["sub-menu-current-desktop--saturn"]: name.toLowerCase() === "saturn" && currentPage === "surface",
+    ["sub-menu-current-desktop--uranus"]: name.toLowerCase() === "uranus" && currentPage === "surface",
+    ["sub-menu-current-desktop--neptune"]: name.toLowerCase() === "neptune" && currentPage === "surface"
   });
 
   return (

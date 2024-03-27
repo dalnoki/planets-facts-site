@@ -318,12 +318,13 @@ body {
   }
 
   &--img {
+    align-items: center;
     display: flex;
+    flex-direction: column;
     width: 224px;
     height: 224px;
     margin: 0 auto;
     justify-content: center;
-    align-items: center;
 
     @include respond(m) {
       flex-basis: 100%;
@@ -429,6 +430,58 @@ body {
     }
   }
 
+  &-current-desktop {
+    position: relative;
+
+    &--earth {
+      @include respond (m) {
+      background: $earth-secondary;
+      }
+    }
+
+    &--mars {
+      @include respond (m) {
+        background: $mars-secondary;
+        }
+    }
+
+    &--jupiter {
+      @include respond (m) {
+        background: $jupiter-secondary;
+        }
+    }
+
+    &--mercury {
+      @include respond (m) {
+        background: $mercury-secondary;
+        }
+    }
+
+    &--neptune {
+      @include respond (m) {
+        background: $neptune-secondary;
+        }
+    }
+
+    &--saturn {
+      @include respond (m) {
+        background: $saturn-secondary;
+        }
+    }
+
+    &--uranus {
+      @include respond (m) {
+        background: $uranus-secondary;
+        }
+    }
+
+    &--venus {
+      @include respond (m) {
+        background: $venus-secondary;
+        }
+    }
+  }
+
   &--row {
     display: flex;
 
@@ -460,21 +513,18 @@ body {
 }
 
 .surface-img {
-  position: absolute;
-  bottom: 220px;
-  left: 238px;
-
-  @include respond(m) {
-    bottom: px-to-rem(150);
-    left: px-to-rem(406);
-  }
+  position: relative;
 
   & img {
   height: px-to-rem(60);  
+  position: absolute;
+  right: px-to-rem(-25);
+  top: px-to-rem(-25);
   width: px-to-rem(50);  
 
   @include respond(m) {  
   bottom: px-to-rem(125);
+  left: px-to-rem(-40);
   height: px-to-rem(100);
   width: px-to-rem(81);
 

@@ -19,13 +19,13 @@ export default function Overview({
     <>
       <div className="planet--img">
         <img src={image} alt={name}></img>
-      </div>
       { currentPage === "surface" ? 
       <div className="surface-img">
         
       <img src={`./src/assets/geology-${name.toLowerCase()}.png`} alt={name} />
       </div> : null
 }
+</div>
       <h1 className="planet--name">{name}</h1>
       <div className="planet--description">
         <p>{description}</p>
