@@ -51,9 +51,9 @@ export default function SubMenu({
 
   return (
     <ul className="sub-menu">
-      <li className={subMenuStyleOverView}>
+      <li className={subMenuStyleOverView} onClick={() => setCurrentPage("overview")}>
         <p className="sub-menu--index">01</p>
-        <a onClick={() => setCurrentPage("overview")}>Overview</a>
+        <a>Overview</a>
         <span
           className={
             currentPage === "overview"
@@ -62,9 +62,9 @@ export default function SubMenu({
           }
         ></span>
       </li>
-      <li className={subMenuStyleStructure}>
+      <li className={subMenuStyleStructure} onClick={() => setCurrentPage("structure")}>
       <p className="sub-menu--index">02</p>
-        <a onClick={() => setCurrentPage("structure")}>Structure</a>
+        <a>Structure</a>
         <span
           className={
             currentPage === "structure"
@@ -73,9 +73,9 @@ export default function SubMenu({
           }
         ></span>
       </li>
-      <li className={subMenuStyleSurface}>
+      <li className={subMenuStyleSurface} onClick={() => setCurrentPage("surface")}>
           <p className="sub-menu--index">03</p>
-        <a onClick={() => setCurrentPage("surface")}>Surface</a>
+        <a>Surface</a>
         <span
           className={
             currentPage === "surface"

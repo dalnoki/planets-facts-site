@@ -3,16 +3,33 @@ import hamburger from "../assets/icon-hamburger.svg";
 import chevron from "../assets/icon-chevron.svg"
 import { Link } from "react-router-dom";
 import planetData from "../../data.json";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import clsx from "clsx";
 
 const allPlanets = planetData;
 
 export default function Nav() {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
+  const [currentMenuElement, setCurrentMenuElement] = useState("mercury");
 
+  const spanRef = useRef(null);
+ // console.log(spanRef.current.get("Venus"))
+
+  function getMap() {
+    if (!spanRef.current) {
+      // Initialize the Map on first usage.
+      spanRef.current = new Map();
+    }
+    return spanRef.current;
+  }
+
+  
   const handleToggle: () => void = () => 
   setIsMenuToggled(!isMenuToggled);
+
+  const handleElementSelection: (name: string) => void = (name) =>
+  setCurrentMenuElement(name.toLowerCase());
+
 
   const hamburgerMenuStyle = clsx({
     ["nav-planets"]: true,
@@ -23,6 +40,10 @@ export default function Nav() {
     ["nav-planets--desktop"]: true,
   });
 
+  const spanStyle = clsx({
+    ['nav-span'] : true,
+    [`planet-${currentMenuElement}-color`]: true
+  })
 
   return (
     <nav className="nav">
@@ -59,13 +80,24 @@ export default function Nav() {
           ))}
         </ul>
       </div>
-      <div>
-        <ul className={menuStyle}>
-        {allPlanets.map((planet) => (
-              <Link to={`${planet.name.toLowerCase()}`}>{planet.name}</Link>       
-          ))}
-        </ul>
+<div>
+  <ul className={menuStyle}>
+    {allPlanets.map((planet) => (
+      <div key={planet.name} ref={(node) => {
+        const map = getMap();
+        if (node) {
+          map.set(planet.name, node);
+        } else {
+          map.delete(planet.name);
+        }
+      }}>
+        <Link to={`/${planet.name.toLowerCase()}`} onClick={() => handleElementSelection(planet.name)}>{planet.name}</Link>
+        {currentMenuElement === planet.name.toLowerCase() && spanRef.current ? <span className={spanStyle} style={{ width: spanRef.current.get(planet.name)?.offsetWidth}}></span> : null}
+        {currentMenuElement === planet.name.toLowerCase() && !spanRef.current ? <span className={spanStyle} style={{ width: 74 }}></span> : null}
       </div>
+    ))}
+  </ul>
+</div>
     </nav>
   );
 }

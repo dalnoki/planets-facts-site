@@ -57,6 +57,10 @@ body {
     @include respond(m) {
       padding: px-to-rem(32) 0;
     }
+
+  @include respond (l) {
+    padding-left: px-to-rem(33);
+  }  
   }
 
   & ul:last-child {
@@ -85,6 +89,35 @@ body {
       display: none;
     }
 
+  }
+
+  &-overlay {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+
+    & > label {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      top: 30px;
+      left: 200px;
+      width: 30px;
+      height: 16px;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+
+    > label::before {
+      content: "";
+      display: block;
+      position: relative;
+      top: 7px;
+      border-top: 2px solid #000;
+    }
   }
 
   &-planets {
@@ -118,9 +151,14 @@ body {
 
       & a {
         color: rgba(255, 255, 255, .7);
-        padding-right: px-to-rem(33);
         text-transform: uppercase;
         text-decoration: none;
+      }
+
+      & div {
+        margin-right: px-to-rem(33);
+        position: relative;
+        width: fit-content;
       }
     }
 
@@ -146,34 +184,19 @@ body {
     }
   }
 
-  &-overlay {
+  &-span {
     display: none;
+
+    @include respond(l) { 
+    height: px-to-rem(4);
+    left: px-to-rem(-3);
     position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 80px;
-    background-color: #fff;
-
-    & > label {
-      cursor: pointer;
-      display: block;
-      position: relative;
-      top: 30px;
-      left: 200px;
-      width: 30px;
-      height: 16px;
-      border-top: 2px solid #000;
-      border-bottom: 2px solid #000;
-    }
-
-    > label::before {
-      content: "";
-      display: block;
-      position: relative;
-      top: 7px;
-      border-top: 2px solid #000;
+    top: px-to-rem(-40);
+    display: block;
     }
   }
+
+  
 }
 
 .menu-toggled {
@@ -231,6 +254,14 @@ body {
         margin-right: px-to-rem(11);
         min-width: px-to-rem(164);
         padding: 0;
+
+        @include respond(l) {
+          min-width: px-to-rem(200);
+        }
+
+        @include respond(xl) {
+          min-width: px-to-rem(255);
+        }
       }
     }
   }
@@ -270,19 +301,28 @@ body {
   &-page {
     background: $body-background url("./assets/background-stars.svg") repeat
       center;
-    padding-bottom: px-to-rem(50);
+      padding-bottom: px-to-rem(48);
 
     @include respond(m) {
       align-items: center;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      padding-bottom: px-to-rem(80);
     }
 
    @include respond(l) {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 10% 25% 5% 30% 20%;    
+    grid-template-columns: px-to-rem(600) px-to-rem(360);
+    grid-template-rows: px-to-rem(104) px-to-rem(150) px-to-rem(25) px-to-rem(176) px-to-rem(128);    
+    padding-top: px-to-rem(126);
+    padding-bottom: px-to-rem(112);
+   } 
+
+   @include respond(xl) {
+    display: grid;
+    grid-template-columns: px-to-rem(700) px-to-rem(350);
+    grid-template-rows: px-to-rem(104) px-to-rem(150) px-to-rem(25) px-to-rem(176) px-to-rem(128);    
     padding-top: 126px;
    } 
   }
@@ -371,6 +411,13 @@ body {
       grid-column-end: 2;
       grid-row-start: 2;
       grid-row-end: 4;
+      min-width: px-to-rem(600);
+      min-height: px-to-rem(600);
+    }
+
+    @include respond(xl) {
+      min-width: px-to-rem(700);
+      min-height: px-to-rem(700);
     }
 
       &-mercury {
@@ -379,7 +426,12 @@ body {
 
         @include respond(m) {
           height: px-to-rem(184);
-        width: px-to-rem(184);
+          width: px-to-rem(184);
+
+        @include respond(l) {
+          height: px-to-rem(290);
+          width: px-to-rem(290);
+        }
         }
       }
 
@@ -391,6 +443,11 @@ body {
           height: px-to-rem(253);
           width: px-to-rem(253);
         }
+
+        @include respond(l) {
+          height: px-to-rem(400);
+          width: px-to-rem(400);
+        }
       }
 
       &-earth {
@@ -400,6 +457,11 @@ body {
         @include respond(m) {
           height: px-to-rem(285);
           width: px-to-rem(285);
+        }
+
+        @include respond(l) {
+          height: px-to-rem(450);
+          width: px-to-rem(450);
         }
       }
 
@@ -411,6 +473,11 @@ body {
           height: px-to-rem(213);
           width: px-to-rem(213);
         }
+
+        @include respond(l) {
+          height: px-to-rem(336);
+          width: px-to-rem(336);
+        }
       }
 
       &-jupiter {
@@ -420,6 +487,11 @@ body {
         @include respond(m) {
           height: px-to-rem(369);
           width: px-to-rem(369);
+        }
+
+        @include respond(l) {
+          height: px-to-rem(582);
+          width: px-to-rem(582);
         }
       }
 
@@ -431,6 +503,11 @@ body {
           height: px-to-rem(422);
           width: px-to-rem(422);
         }
+
+        @include respond(l) {
+          height: px-to-rem(666);
+          width: px-to-rem(666);
+        }
       }
 
       &-uranus {
@@ -441,13 +518,23 @@ body {
           height: px-to-rem(290);
           width: px-to-rem(290);
         }
+
+        @include respond(l) {
+          height: px-to-rem(458);
+          width: px-to-rem(458);
+        }
       }
 
       &-neptune {
-        height: px-to-rem(285);
-        width: px-to-rem(285);
+        height: px-to-rem(173);
+        width: px-to-rem(173);
 
         @include respond(m) {
+          height: px-to-rem(285);
+          width: px-to-rem(285);
+        }
+
+        @include respond(l) {
           height: px-to-rem(450);
           width: px-to-rem(450);
         }
@@ -475,6 +562,7 @@ body {
     grid-column-end: 3;
     grid-row-start: 1;
     grid-row-end: 2;
+    margin: 0;
    }
   }
 }
@@ -504,6 +592,8 @@ body {
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
+    max-width: px-to-rem(281);
+    padding: 0;
    }
 
   &-current {
@@ -610,6 +700,7 @@ body {
   }
 
   &--row {
+    cursor: pointer;
     display: flex;
 
     @include respond(m) {
@@ -617,6 +708,11 @@ body {
       max-width: px-to-rem(281);
       padding-top: px-to-rem(8);
       padding-bottom: px-to-rem(8);
+    }
+
+    &:hover {
+      background-color: #313148;
+      border: 1px solid #313148;
     }
   }
 
