@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<PlanetPage planet={allPlanets[0]} />} />
         {allPlanets.map((planet) => (
           <Route
-            path={`/${planet.name.toLowerCase()}`}
+            path={`/planets-facts-site/${planet.name.toLowerCase()}`}
             element={<PlanetPage planet={planet} />}
             key={planet.name}
           />

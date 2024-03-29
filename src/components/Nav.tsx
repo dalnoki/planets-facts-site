@@ -12,11 +12,11 @@ export default function Nav() {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const [currentMenuElement, setCurrentMenuElement] = useState("mercury");
 
-  const spanRef = useRef(null);
+  const spanRef = useRef<Map<string, HTMLDivElement | null>>(new Map());
  // console.log(spanRef.current.get("Venus"))
 
   function getMap() {
-    if (!spanRef.current) {
+    if (!spanRef.current && spanRef) {
       // Initialize the Map on first usage.
       spanRef.current = new Map();
     }
@@ -85,7 +85,7 @@ export default function Nav() {
     {allPlanets.map((planet) => (
       <div key={planet.name} ref={(node) => {
         const map = getMap();
-        if (node) {
+        if (node && spanRef) {
           map.set(planet.name, node);
         } else {
           map.delete(planet.name);
