@@ -313,8 +313,9 @@ body {
 
    @include respond(l) {
     display: grid;
+    grid-row-gap: px-to-rem(20);
     grid-template-columns: px-to-rem(600) px-to-rem(360);
-    grid-template-rows: px-to-rem(104) px-to-rem(150) px-to-rem(25) px-to-rem(176) px-to-rem(128);    
+    grid-template-rows: px-to-rem(50) px-to-rem(150) px-to-rem(40) px-to-rem(176) px-to-rem(128);    
     padding-top: px-to-rem(126);
     padding-bottom: px-to-rem(112);
    } 
@@ -355,6 +356,7 @@ body {
       grid-column-end: 3;
       grid-row-start: 3;
       grid-row-end: 4;
+      padding-top: 0;
      }
 
     & p a {
@@ -398,6 +400,7 @@ body {
     min-height: px-to-rem(300);
     margin: 0 auto;
     justify-content: center;
+    position: relative;
 
     @include respond(m) {
       flex-basis: 100%;
@@ -505,6 +508,11 @@ body {
         }
 
         @include respond(l) {
+          height: px-to-rem(500);
+          width: px-to-rem(500);
+        }
+
+        @include respond(xl) {
           height: px-to-rem(666);
           width: px-to-rem(666);
         }
@@ -711,8 +719,10 @@ body {
     }
 
     &:hover {
+      @include respond(m) {
       background-color: #313148;
       border: 1px solid #313148;
+      }
     }
   }
 
@@ -736,21 +746,29 @@ body {
 }
 
 .surface-img {
-  position: relative;
+  bottom: px-to-rem(15);
+  position: absolute;
+
+  @include respond(m) {
+   bottom: px-to-rem(35);
+  }
+
+  @include respond(l) {
+    bottom: 0;
+   }
 
   & img {
   height: px-to-rem(60);  
-  position: absolute;
-  right: px-to-rem(-25);
-  top: px-to-rem(-25);
   width: px-to-rem(50);  
 
   @include respond(m) {  
-  bottom: px-to-rem(125);
-  left: px-to-rem(-40);
   height: px-to-rem(100);
   width: px-to-rem(81);
-
   }
+
+  @include respond(l) {  
+    height: px-to-rem(199);
+    width: px-to-rem(163);
+    }
   }
 }
