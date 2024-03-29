@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import PlanetPage from "./components/PlanetPage";
 import "./main.scss";
 import planetData from "../data.json";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 const allPlanets = planetData;
 
