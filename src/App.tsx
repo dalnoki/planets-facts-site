@@ -10,20 +10,16 @@ function App() {
   return (
     <>
       <Header />
-      <BrowserRouter
-      basename={import.meta.env.DEV ? '/' : '/planets-facts-site/'}
-    >
       <Routes>
         <Route path="/" element={<PlanetPage planet={allPlanets[0]} />} />
         {allPlanets.map((planet) => (
           <Route
-            path={`/planets-facts-site/${planet.name.toLowerCase()}`}
+            path={`${planet.name.toLowerCase()}`}
             element={<PlanetPage planet={planet} />}
             key={planet.name}
           />
         ))}
       </Routes>
-      </BrowserRouter>
     </>
   );
 }
