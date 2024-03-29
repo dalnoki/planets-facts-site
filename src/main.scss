@@ -746,15 +746,19 @@ body {
 }
 
 .surface-img {
-  bottom: px-to-rem(15);
+  bottom: px-to-rem(40);
   position: absolute;
 
   @include respond(m) {
-   bottom: px-to-rem(35);
+   bottom: px-to-rem(65);
   }
 
   @include respond(l) {
     bottom: 0;
+   }
+
+   @include respond(xl) {
+    bottom: px-to-rem(35);
    }
 
   & img {
