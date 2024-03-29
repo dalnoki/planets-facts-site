@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import PlanetPage from "./components/PlanetPage";
 import "./main.scss";
 import planetData from "../data.json";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const allPlanets = planetData;
 
@@ -10,6 +10,9 @@ function App() {
   return (
     <>
       <Header />
+      <BrowserRouter
+      basename={import.meta.env.DEV ? '/' : '/planets-facts-site/'}
+    >
       <Routes>
         <Route path="/" element={<PlanetPage planet={allPlanets[0]} />} />
         {allPlanets.map((planet) => (
@@ -20,6 +23,7 @@ function App() {
           />
         ))}
       </Routes>
+      </BrowserRouter>
     </>
   );
 }
