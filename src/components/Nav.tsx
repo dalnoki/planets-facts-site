@@ -1,6 +1,6 @@
 import "../main.scss";
-import hamburger from "../assets/icon-hamburger.svg";
-import chevron from "../assets/icon-chevron.svg"
+import hamburger from "../../public/assets/icon-hamburger.svg"
+import chevron from "../../public/assets/icon-chevron.svg"
 import { Link } from "react-router-dom";
 import planetData from "../../data.json";
 import { useRef, useState } from "react";

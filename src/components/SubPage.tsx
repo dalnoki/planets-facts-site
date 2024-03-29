@@ -1,6 +1,4 @@
-declare var require: any
-
-import iconSource from "../assets/icon-source.svg";
+import iconSource from "../../public/assets/icon-source.svg"
 
 interface SubPageProps {
   image: string;
@@ -24,7 +22,7 @@ export default function Overview({
       { currentPage === "surface" ? 
       <div className="surface-img">
         
-      <img src={require(`./assets/geology-${name.toLowerCase()}.png`)} alt={name} />
+      <img src={`../public/assets/geology-${name.toLowerCase()}.png`} alt={name} />
       </div> : null
 }
 </div>
