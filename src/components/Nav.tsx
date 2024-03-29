@@ -91,7 +91,7 @@ export default function Nav() {
           map.delete(planet.name);
         }
       }}>
-        <Link to={`/${planet.name.toLowerCase()}`} onClick={() => handleElementSelection(planet.name)}>{planet.name}</Link>
+        <Link to={`/planets-facts-site/${planet.name.toLowerCase()}`} onClick={() => handleElementSelection(planet.name)}>{planet.name}</Link>
         {currentMenuElement === planet.name.toLowerCase() && spanRef.current ? <span className={spanStyle} style={{ width: spanRef.current.get(planet.name)?.offsetWidth}}></span> : null}
         {currentMenuElement === planet.name.toLowerCase() && !spanRef.current ? <span className={spanStyle} style={{ width: 74 }}></span> : null}
       </div>
