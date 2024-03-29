@@ -22,7 +22,7 @@ export default function Overview({
       { currentPage === "surface" ? 
       <div className="surface-img">
         
-      <img src={`../public/assets/geology-${name.toLowerCase()}.png`} alt={name} />
+      <img src={`./assets/geology-${name.toLowerCase()}.png`} alt={name} />
       </div> : null
 }
 </div>
