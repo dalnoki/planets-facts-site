@@ -66,7 +66,7 @@ export default function Nav() {
       <div>
         <ul className={hamburgerMenuStyle}>
           {allPlanets.map((planet) => (
-            <div className="nav-planets-container" onClick={handleToggle} key={planet.name}>
+            <li key={planet.name} className="nav-planets-container" onClick={handleToggle}>
               <div className="nav-planets--planet">
               <span
                 className={`planet-theme planet-${planet.name.toLowerCase()}-color`}
@@ -76,7 +76,7 @@ export default function Nav() {
               <div className="nav-planets--chevron">
               <img src={chevron} alt=""/>
               </div>
-            </div>
+            </li>
        
           ))}
         </ul>
@@ -84,8 +84,8 @@ export default function Nav() {
 <div>
   <ul className={menuStyle}>
     {allPlanets.map((planet) => (
-      <li>
-      <div key={planet.name} ref={(node) => {
+      <li key={planet.name}>
+      <div ref={(node) => {
         const map = getMap();
         if (node && spanRef) {
           map.set(planet.name, node);
