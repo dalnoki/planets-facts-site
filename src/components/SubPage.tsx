@@ -33,7 +33,7 @@ export default function Overview({
       <div className="planet--source">
         <p>
           Source: <a href={source}>Wikipedia</a>
-          <img src={iconSource} />
+          <img src={iconSource} alt=""/>
         </p>
       </div>
     </>

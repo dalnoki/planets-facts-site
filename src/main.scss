@@ -85,6 +85,8 @@ body {
   }
 
   &--hamburger {
+    cursor: pointer;
+
     @include respond(m) {
       display: none;
     }

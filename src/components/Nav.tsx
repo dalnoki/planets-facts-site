@@ -59,6 +59,7 @@ export default function Nav() {
           width={24}
           height={17}
           onClick={handleToggle}
+          alt="Open menu"
         ></img>
       </label>
       <input className="nav-checkbox" id="menu" type="checkbox" />
@@ -73,7 +74,7 @@ export default function Nav() {
               <Link to={`${planet.name.toLowerCase()}`}>{planet.name}</Link>
               </div>
               <div className="nav-planets--chevron">
-              <img src={chevron} />
+              <img src={chevron} alt=""/>
               </div>
             </div>
        
@@ -83,6 +84,7 @@ export default function Nav() {
 <div>
   <ul className={menuStyle}>
     {allPlanets.map((planet) => (
+      <li>
       <div key={planet.name} ref={(node) => {
         const map = getMap();
         if (node && spanRef) {
@@ -95,6 +97,7 @@ export default function Nav() {
         {currentMenuElement === planet.name.toLowerCase() && spanRef.current ? <span className={spanStyle} style={{ width: spanRef.current.get(planet.name)?.offsetWidth}}></span> : null}
         {currentMenuElement === planet.name.toLowerCase() && !spanRef.current ? <span className={spanStyle} style={{ width: 74 }}></span> : null}
       </div>
+      </li>
     ))}
   </ul>
 </div>
