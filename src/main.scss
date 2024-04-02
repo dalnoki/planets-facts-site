@@ -58,9 +58,9 @@ body {
       padding: px-to-rem(32) 0;
     }
 
-  @include respond (l) {
-    padding-left: px-to-rem(33);
-  }  
+    @include respond(l) {
+      padding-left: px-to-rem(33);
+    }
   }
 
   & ul:last-child {
@@ -90,7 +90,6 @@ body {
     @include respond(m) {
       display: none;
     }
-
   }
 
   &-overlay {
@@ -152,7 +151,7 @@ body {
       }
 
       & a {
-        color: rgba(255, 255, 255, .7);
+        color: rgba(255, 255, 255, 0.7);
         text-transform: uppercase;
         text-decoration: none;
       }
@@ -166,7 +165,7 @@ body {
 
     &-container {
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, .2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       height: px-to-rem(65);
       display: flex;
       padding-left: px-to-rem(24);
@@ -189,16 +188,14 @@ body {
   &-span {
     display: none;
 
-    @include respond(l) { 
-    height: px-to-rem(4);
-    left: px-to-rem(-3);
-    position: absolute;
-    top: px-to-rem(-40);
-    display: block;
+    @include respond(l) {
+      height: px-to-rem(4);
+      left: px-to-rem(-3);
+      position: absolute;
+      top: px-to-rem(-40);
+      display: block;
     }
   }
-
-  
 }
 
 .menu-toggled {
@@ -221,7 +218,7 @@ body {
       grid-column-end: 3;
       grid-row-start: 5;
       grid-row-end: 6;
-     }
+    }
     &-data {
       color: $body-font-color;
       font-family: $font-secondary;
@@ -301,9 +298,9 @@ body {
   }
 
   &-page {
-    background: $body-background url("./background-stars.svg") repeat
-      center;
-      padding-bottom: px-to-rem(48);
+    background: $body-background url("./background-stars.svg") repeat center;
+    height: 100vh;
+    padding-bottom: px-to-rem(48);
 
     @include respond(m) {
       align-items: center;
@@ -313,21 +310,25 @@ body {
       padding-bottom: px-to-rem(80);
     }
 
-   @include respond(l) {
-    display: grid;
-    grid-row-gap: px-to-rem(20);
-    grid-template-columns: px-to-rem(600) px-to-rem(360);
-    grid-template-rows: px-to-rem(50) px-to-rem(150) px-to-rem(40) px-to-rem(176) px-to-rem(128);    
-    padding-top: px-to-rem(126);
-    padding-bottom: px-to-rem(112);
-   } 
+    @include respond(l) {
+      display: grid;
+      grid-row-gap: px-to-rem(20);
+      grid-template-columns: px-to-rem(600) px-to-rem(360);
+      grid-template-rows: px-to-rem(50) px-to-rem(150) px-to-rem(40) px-to-rem(
+          176
+        ) px-to-rem(128);
+      padding-top: px-to-rem(126);
+      padding-bottom: px-to-rem(112);
+    }
 
-   @include respond(xl) {
-    display: grid;
-    grid-template-columns: px-to-rem(700) px-to-rem(350);
-    grid-template-rows: px-to-rem(104) px-to-rem(150) px-to-rem(25) px-to-rem(176) px-to-rem(128);    
-    padding-top: 126px;
-   } 
+    @include respond(xl) {
+      display: grid;
+      grid-template-columns: px-to-rem(700) px-to-rem(350);
+      grid-template-rows: px-to-rem(104) px-to-rem(150) px-to-rem(25) px-to-rem(
+          176
+        ) px-to-rem(128);
+      padding-top: 126px;
+    }
   }
 
   &-theme {
@@ -359,7 +360,7 @@ body {
       grid-row-start: 3;
       grid-row-end: 4;
       padding-top: 0;
-     }
+    }
 
     & p a {
       color: $white-opacity;
@@ -391,7 +392,7 @@ body {
       grid-column-end: 3;
       grid-row-start: 2;
       grid-row-end: 3;
-     }
+    }
   }
 
   &--img {
@@ -425,132 +426,131 @@ body {
       min-height: px-to-rem(700);
     }
 
-      &-mercury {
-        height: px-to-rem(111);
-        width: px-to-rem(111);
+    &-mercury {
+      height: px-to-rem(111);
+      width: px-to-rem(111);
 
-        @include respond(m) {
-          height: px-to-rem(184);
-          width: px-to-rem(184);
+      @include respond(m) {
+        height: px-to-rem(184);
+        width: px-to-rem(184);
 
         @include respond(l) {
           height: px-to-rem(290);
           width: px-to-rem(290);
-        }
-        }
-      }
-
-      &-venus {
-        height: px-to-rem(154);
-        width: px-to-rem(154);
-
-        @include respond(m) {
-          height: px-to-rem(253);
-          width: px-to-rem(253);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(400);
-          width: px-to-rem(400);
-        }
-      }
-
-      &-earth {
-        height: px-to-rem(173);
-        width: px-to-rem(173);
-
-        @include respond(m) {
-          height: px-to-rem(285);
-          width: px-to-rem(285);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(450);
-          width: px-to-rem(450);
-        }
-      }
-
-      &-mars {
-        height: px-to-rem(129);
-        width: px-to-rem(129);
-
-        @include respond(m) {
-          height: px-to-rem(213);
-          width: px-to-rem(213);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(336);
-          width: px-to-rem(336);
-        }
-      }
-
-      &-jupiter {
-        height: px-to-rem(224);
-        width: px-to-rem(224);
-
-        @include respond(m) {
-          height: px-to-rem(369);
-          width: px-to-rem(369);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(582);
-          width: px-to-rem(582);
-        }
-      }
-
-      &-saturn {
-        height: px-to-rem(256);
-        width: px-to-rem(256);
-
-        @include respond(m) {
-          height: px-to-rem(422);
-          width: px-to-rem(422);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(500);
-          width: px-to-rem(500);
-        }
-
-        @include respond(xl) {
-          height: px-to-rem(666);
-          width: px-to-rem(666);
-        }
-      }
-
-      &-uranus {
-        height: px-to-rem(176);
-        width: px-to-rem(176);
-
-        @include respond(m) {
-          height: px-to-rem(290);
-          width: px-to-rem(290);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(458);
-          width: px-to-rem(458);
-        }
-      }
-
-      &-neptune {
-        height: px-to-rem(173);
-        width: px-to-rem(173);
-
-        @include respond(m) {
-          height: px-to-rem(285);
-          width: px-to-rem(285);
-        }
-
-        @include respond(l) {
-          height: px-to-rem(450);
-          width: px-to-rem(450);
         }
       }
     }
-  
+
+    &-venus {
+      height: px-to-rem(154);
+      width: px-to-rem(154);
+
+      @include respond(m) {
+        height: px-to-rem(253);
+        width: px-to-rem(253);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(400);
+        width: px-to-rem(400);
+      }
+    }
+
+    &-earth {
+      height: px-to-rem(173);
+      width: px-to-rem(173);
+
+      @include respond(m) {
+        height: px-to-rem(285);
+        width: px-to-rem(285);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(450);
+        width: px-to-rem(450);
+      }
+    }
+
+    &-mars {
+      height: px-to-rem(129);
+      width: px-to-rem(129);
+
+      @include respond(m) {
+        height: px-to-rem(213);
+        width: px-to-rem(213);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(336);
+        width: px-to-rem(336);
+      }
+    }
+
+    &-jupiter {
+      height: px-to-rem(224);
+      width: px-to-rem(224);
+
+      @include respond(m) {
+        height: px-to-rem(369);
+        width: px-to-rem(369);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(582);
+        width: px-to-rem(582);
+      }
+    }
+
+    &-saturn {
+      height: px-to-rem(256);
+      width: px-to-rem(256);
+
+      @include respond(m) {
+        height: px-to-rem(422);
+        width: px-to-rem(422);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(500);
+        width: px-to-rem(500);
+      }
+
+      @include respond(xl) {
+        height: px-to-rem(666);
+        width: px-to-rem(666);
+      }
+    }
+
+    &-uranus {
+      height: px-to-rem(176);
+      width: px-to-rem(176);
+
+      @include respond(m) {
+        height: px-to-rem(290);
+        width: px-to-rem(290);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(458);
+        width: px-to-rem(458);
+      }
+    }
+
+    &-neptune {
+      height: px-to-rem(173);
+      width: px-to-rem(173);
+
+      @include respond(m) {
+        height: px-to-rem(285);
+        width: px-to-rem(285);
+      }
+
+      @include respond(l) {
+        height: px-to-rem(450);
+        width: px-to-rem(450);
+      }
+    }
+  }
 
   &--name {
     color: $h1-font-color;
@@ -559,21 +559,21 @@ body {
     text-align: center;
     text-transform: uppercase;
 
-   @include respond(m) {
-    display: flex;
-    flex-basis: 100%;    
-    margin-bottom: px-to-rem(16);
-    margin-left: px-to-rem(39);
-    order: 2;
-   } 
+    @include respond(m) {
+      display: flex;
+      flex-basis: 100%;
+      margin-bottom: px-to-rem(16);
+      margin-left: px-to-rem(39);
+      order: 2;
+    }
 
-   @include respond(l) {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin: 0;
-   }
+    @include respond(l) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      margin: 0;
+    }
   }
 }
 
@@ -604,7 +604,7 @@ body {
     grid-row-end: 5;
     max-width: px-to-rem(281);
     padding: 0;
-   }
+  }
 
   &-current {
     position: relative;
@@ -650,10 +650,9 @@ body {
       width: 80px;
       left: -9px;
 
-
-    @include respond(m) {
-     display: none;
-    }
+      @include respond(m) {
+        display: none;
+      }
     }
   }
 
@@ -661,51 +660,51 @@ body {
     position: relative;
 
     &--earth {
-      @include respond (m) {
-      background: $earth-secondary;
+      @include respond(m) {
+        background: $earth-secondary;
       }
     }
 
     &--mars {
-      @include respond (m) {
+      @include respond(m) {
         background: $mars-secondary;
-        }
+      }
     }
 
     &--jupiter {
-      @include respond (m) {
+      @include respond(m) {
         background: $jupiter-secondary;
-        }
+      }
     }
 
     &--mercury {
-      @include respond (m) {
+      @include respond(m) {
         background: $mercury-secondary;
-        }
+      }
     }
 
     &--neptune {
-      @include respond (m) {
+      @include respond(m) {
         background: $neptune-secondary;
-        }
+      }
     }
 
     &--saturn {
-      @include respond (m) {
+      @include respond(m) {
         background: $saturn-secondary;
-        }
+      }
     }
 
     &--uranus {
-      @include respond (m) {
+      @include respond(m) {
         background: $uranus-secondary;
-        }
+      }
     }
 
     &--venus {
-      @include respond (m) {
+      @include respond(m) {
         background: $venus-secondary;
-        }
+      }
     }
   }
 
@@ -722,8 +721,8 @@ body {
 
     &:hover {
       @include respond(m) {
-      background-color: #313148;
-      border: 1px solid #313148;
+        background-color: #313148;
+        border: 1px solid #313148;
       }
     }
   }
@@ -732,18 +731,17 @@ body {
     display: none;
 
     @include respond(m) {
-      color: rgba(255, 255, 255, .5);
+      color: rgba(255, 255, 255, 0.5);
       display: block;
       padding-left: px-to-rem(20);
       padding-right: px-to-rem(17);
     }
   }
-  
 
   & li {
-   @include respond(m) {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-   } 
+    @include respond(m) {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
   }
 }
 
@@ -752,29 +750,29 @@ body {
   position: absolute;
 
   @include respond(m) {
-   bottom: px-to-rem(65);
+    bottom: px-to-rem(65);
   }
 
   @include respond(l) {
     bottom: 0;
-   }
-
-   @include respond(xl) {
-    bottom: px-to-rem(35);
-   }
-
-  & img {
-  height: px-to-rem(60);  
-  width: px-to-rem(50);  
-
-  @include respond(m) {  
-  height: px-to-rem(100);
-  width: px-to-rem(81);
   }
 
-  @include respond(l) {  
-    height: px-to-rem(199);
-    width: px-to-rem(163);
+  @include respond(xl) {
+    bottom: px-to-rem(35);
+  }
+
+  & img {
+    height: px-to-rem(60);
+    width: px-to-rem(50);
+
+    @include respond(m) {
+      height: px-to-rem(100);
+      width: px-to-rem(81);
+    }
+
+    @include respond(l) {
+      height: px-to-rem(199);
+      width: px-to-rem(163);
     }
   }
 }
