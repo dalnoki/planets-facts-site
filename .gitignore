@@ -4,3 +4,4 @@ design
 .env*
 !.env.sample
 notes.txt
+dist/
