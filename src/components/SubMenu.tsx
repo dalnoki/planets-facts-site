@@ -12,6 +12,7 @@ export default function SubMenu({
   name,
 }: SubMenuProps) {
 
+  // TODO: remove code repetition.
   const subMenuStyleOverView = clsx({
     ["sub-menu--row"]: true,
     ["sub-menu-current"]: currentPage === "overview",
@@ -49,6 +50,7 @@ export default function SubMenu({
     ["sub-menu-current-desktop--neptune"]: name.toLowerCase() === "neptune" && currentPage === "surface"
   });
 
+  // TODO: generate list elements dynamically to remove repetition
   return (
     <ul className="sub-menu">
       <li className={subMenuStyleOverView} onClick={() => setCurrentPage("overview")}>

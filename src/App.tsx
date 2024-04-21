@@ -12,6 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<PlanetPage planet={allPlanets[0]} />} />
+
         {allPlanets.map((planet) => (
           <Route
             path={`${planet.name.toLowerCase()}`}
