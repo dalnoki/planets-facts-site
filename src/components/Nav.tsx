@@ -2,11 +2,9 @@ import "../main.scss";
 import hamburger from "../../public/assets/icon-hamburger.svg"
 import chevron from "../../public/assets/icon-chevron.svg"
 import { Link } from "react-router-dom";
-import planetData from "../../data.json";
+import allPlanets from "../../data.json";
 import { useRef, useState } from "react";
 import clsx from "clsx";
-
-const allPlanets = planetData;
 
 export default function Nav() {
   const [isMenuToggled, setIsMenuToggled] = useState(false);

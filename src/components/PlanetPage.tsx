@@ -2,33 +2,37 @@ import { useState } from "react";
 import SubMenu from "./SubMenu";
 import SubPage from "./SubPage";
 
-export type PlanetType = {
-  planet: {
-    name: string;
-    overview: {
-      content: string;
-      source: string;
-    };
-    structure: {
-      content: string;
-      source: string;
-    };
-    geology: {
-      content: string;
-      source: string;
-    };
-    rotation: string;
-    revolution: string;
-    radius: string;
-    temperature: string;
-    images: {
-      planet: string;
-      internal: string;
-      geology: string;
-    };
+type Planet = {
+  name: string;
+  overview: {
+    content: string;
+    source: string;
+  };
+  structure: {
+    content: string;
+    source: string;
+  };
+  // geology vs surface?
+  geology: {
+    content: string;
+    source: string;
+  };
+  rotation: string;
+  revolution: string;
+  radius: string;
+  temperature: string;
+  images: {
+    planet: string;
+    internal: string;
+    geology: string;
   };
 };
-export default function PlanetPage({ planet }: PlanetType) {
+
+type PlanetPageProps = {
+  planet: Planet;
+}
+
+export default function PlanetPage({ planet }: PlanetPageProps) {
   const [currentPage, setCurrentPage] = useState("overview");
 
   return (

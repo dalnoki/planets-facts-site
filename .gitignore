@@ -1,3 +1,7 @@
 node_modules
 design
 .DS_Store
+.env*
+!.env.sample
+notes.txt
+dist/

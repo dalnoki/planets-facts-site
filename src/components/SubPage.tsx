@@ -32,6 +32,7 @@ export default function Overview({
       </div>
       <div className="planet--source">
         <p>
+          {/* TODO: source should come form the data json */}
           Source: <a href={source}>Wikipedia</a>
           <img src={iconSource} alt=""/>
         </p>
